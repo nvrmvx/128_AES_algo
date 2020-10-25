@@ -6,12 +6,12 @@ postfix D is for Decryption modules
 
 ## TODO LIST:
 ### Encryption
-- [ ] Finish createRoundKey module ()
-- [ ] Finish subBytesE module ()
-- [ ] Finish shiftRowsE module ()
-- [ ] Finish mixColumnsE module ()
-- [ ] Finish Encryption module ()
-- [ ] Set up the run.do to automate testing (NZ)
+- [ ] Finish createRoundKey module (AS) 2
+- [ ] Finish subBytesE module (NZ) 1
+- [ ] Finish shiftRowsE module (AS) 1
+- [ ] Finish mixColumnsE module (AA) 3
+- [ ] Finish Encryption module (NZ) 2
+- [ ] Set up the run.do test cases to automate testing (NZ)
 ### Decryption
 - [ ] Do this after Encryption
 
