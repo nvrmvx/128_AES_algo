@@ -1,6 +1,6 @@
 module shiftRowsE(
-       input   Input,
-       output  Output
+       input [127:0]  Input,
+       output [127:0] Output
 );
 
     //shift rows of the input

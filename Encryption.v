@@ -1,7 +1,7 @@
 module Encryption(
-       input   InputMessage,
-       input   CipherKey,
-       output  CodedMessage
+       input [127:0]  InputMessage,
+       input [127:0]  CipherKey,
+       output [127:0] CodedMessage
 );
 
     //add round key
