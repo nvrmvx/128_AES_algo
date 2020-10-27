@@ -61,47 +61,47 @@ module Encryption(
     wire temp39;
 
     createRoundKey rK1(
-        .Input(CipherKey),
-        .Output(roundKey1)
+        .RK(CipherKey),
+        .NextRK(roundKey1)
     );
     createRoundKey rK2(
-        .Input(roundKey1),
-        .Output(roundKey2)
+        .RK(roundKey1),
+        .NextRK(roundKey2)
     );
     createRoundKey rK3(
-        .Input(roundKey2),
-        .Output(roundKey3)
+        .RK(roundKey2),
+        .NextRK(roundKey3)
     );
     createRoundKey rK4(
-        .Input(roundKey3),
-        .Output(roundKey4)
+        .RK(roundKey3),
+        .NextRK(roundKey4)
     );
     createRoundKey rK5(
-        .Input(roundKey4),
-        .Output(roundKey5)
+        .RK(roundKey4),
+        .NextRK(roundKey5)
     );
     createRoundKey rK6(
-        .Input(roundKey5),
-        .Output(roundKey6)
+        .RK(roundKey5),
+        .NextRK(roundKey6)
     );
     createRoundKey rK7(
-        .Input(roundKey6),
-        .Output(roundKey7)
+        .RK(roundKey6),
+        .NextRK(roundKey7)
     );
     createRoundKey rK8(
-        .Input(roundKey7),
-        .Output(roundKey8)
+        .RK(roundKey7),
+        .NextRK(roundKey8)
     );
     createRoundKey rK9(
-        .Input(roundKey8),
-        .Output(roundKey9)
+        .RK(roundKey8),
+        .NextRK(roundKey9)
     );
     createRoundKey rK10(
-        .Input(roundKey9),
-        .Output(roundKey10)
+        .RK(roundKey9),
+        .NextRK(roundKey10)
     );
 
-    xor(temp1,InputMessage,CipherKey);
+    assign temp1 = InputMessage ^ CipherKey;
     //round 1
     subBytesE sB1(
         .Input(temp1),
@@ -115,7 +115,7 @@ module Encryption(
         .Input(temp3),
         .Output(temp4)
     );
-    xor(temp5,temp4,roundKey1);
+    assign temp5 = temp4 ^ roundKey1;
     //round 2
     subBytesE sB2(
         .Input(temp5),
@@ -129,7 +129,7 @@ module Encryption(
         .Input(temp7),
         .Output(temp8)
     );
-    xor(temp9,temp8,roundKey2);
+    assign temp9 = temp8 ^ roundKey2;
     //round 3
     subBytesE sB3(
         .Input(temp9),
@@ -143,7 +143,7 @@ module Encryption(
         .Input(temp11),
         .Output(temp12)
     );
-    xor(temp13,temp12,roundKey3);
+    assign temp13 = temp12 ^ roundKey3;
     //round 4
     subBytesE sB4(
         .Input(temp13),
@@ -157,7 +157,7 @@ module Encryption(
         .Input(temp15),
         .Output(temp16)
     );
-    xor(temp17,temp16,roundKey4);
+    assign temp17 = temp16 ^ roundKey4;
     //round 5
     subBytesE sB5(
         .Input(temp17),
@@ -171,7 +171,7 @@ module Encryption(
         .Input(temp19),
         .Output(temp20)
     );
-    xor(temp21,temp20,roundKey5);
+    assign temp21 = temp20 ^ roundKey5;
     //round 6
     subBytesE sB6(
         .Input(temp21),
@@ -185,7 +185,7 @@ module Encryption(
         .Input(temp23),
         .Output(temp24)
     );
-    xor(temp25,temp24,roundKey6);
+    assign temp25 = temp24 ^ roundKey6;
     //round 7
     subBytesE sB7(
         .Input(temp25),
@@ -199,7 +199,7 @@ module Encryption(
         .Input(temp27),
         .Output(temp28)
     );
-    xor(temp29,temp28,roundKey7);
+    assign temp29 = temp28 ^ roundKey7;
     //round 8
     subBytesE sB8(
         .Input(temp29),
@@ -213,7 +213,7 @@ module Encryption(
         .Input(temp31),
         .Output(temp32)
     );
-    xor(temp33,temp32,roundKey8);
+    assign temp33 = temp32 ^ roundKey8;
     //round 9
     subBytesE sB9(
         .Input(temp33),
@@ -227,7 +227,7 @@ module Encryption(
         .Input(temp35),
         .Output(temp36)
     );
-    xor(temp37,temp36,roundKey9);
+    assign temp37 = temp36 ^ roundKey9;
     //round 10
     subBytesE sB10(
         .Input(temp37),
@@ -237,7 +237,7 @@ module Encryption(
         .Input(temp38),
         .Output(temp39)
     );
-    xor(CodedMessage,temp39,roundKey10);
+    assign CodedMessage = temp39 ^ roundKey10;
 
 endmodule
 
