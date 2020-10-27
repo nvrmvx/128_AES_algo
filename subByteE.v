@@ -1,7 +1,7 @@
 module subByteE(
        input [7:0]  Input,
        output reg [7:0] Output
-)
+);
 
     //substitute the input byte with a byte from the s-box
     always @(*)
