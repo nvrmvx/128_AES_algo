@@ -1,4 +1,5 @@
 vlib work
+vlog subByteE.v
 vlog subBytesE.v
 vsim work.subBytesE
 add wave -position insertpoint  \

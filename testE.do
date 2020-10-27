@@ -1,4 +1,9 @@
 vlib work
+vlog createRoundKey.v
+vlog mixColumnsE.v
+vlog shiftRowsE.v
+vlog subByteE.v
+vlog subBytesE.v
 vlog Encryption.v
 vsim work.Encryption
 add wave -position insertpoint  \
