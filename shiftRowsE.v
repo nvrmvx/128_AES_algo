@@ -2,10 +2,26 @@ module shiftRowsE(
        input [127:0]  Input,
        output [127:0] Output
 );
-
-    assign Output = Input;
-    //shift rows of the input
-
+//First column
+assign         Output[127:120] = Input[127:120];  
+assign         Output[119:112] = Input[87:80];
+assign         Output[111:104] = Input[47:40];
+assign         Output[103:96] = Input[7:0];
+//Second column
+assign          Output[95:88] = Input[95:88];
+assign          Output[87:80] = Input[55:48];
+assign          Output[79:72] = Input[15:8];
+assign          Output[71:64] = Input[103:96];
+//Third column
+assign          Output[63:56] = Input[63:56];
+assign          Output[55:48] = Input[23:16];
+assign          Output[47:40] = Input[111:104];
+assign          Output[39:32] = Input[71:64];
+//Fourth column
+assign          Output[31:24] = Input[31:24];
+assign          Output[23:16] = Input[119:112];
+assign          Output[15:8] = Input[79:72];
+assign          Output[7:0] = Input[39:32]; 
 endmodule
 
 //to test go to this directory
