@@ -103,8 +103,9 @@ module Encryption(
 
     assign temp1 = InputMessage ^ CipherKey;
     //round 1
-    subBytesE sB1(
+    subBytes sB1(
         .Input(temp1),
+        .inv(1'b0)
         .Output(temp2)
     );
     shiftRowsE sR1(
@@ -117,8 +118,9 @@ module Encryption(
     );
     assign temp5 = temp4 ^ roundKey1;
     //round 2
-    subBytesE sB2(
+    subBytes sB2(
         .Input(temp5),
+        .inv(1'b0)
         .Output(temp6)
     );
     shiftRowsE sR2(
@@ -131,8 +133,9 @@ module Encryption(
     );
     assign temp9 = temp8 ^ roundKey2;
     //round 3
-    subBytesE sB3(
+    subBytes sB3(
         .Input(temp9),
+        .inv(1'b0)
         .Output(temp10)
     );
     shiftRowsE sR3(
@@ -145,8 +148,9 @@ module Encryption(
     );
     assign temp13 = temp12 ^ roundKey3;
     //round 4
-    subBytesE sB4(
+    subBytes sB4(
         .Input(temp13),
+        .inv(1'b0)
         .Output(temp14)
     );
     shiftRowsE sR4(
@@ -159,8 +163,9 @@ module Encryption(
     );
     assign temp17 = temp16 ^ roundKey4;
     //round 5
-    subBytesE sB5(
+    subBytes sB5(
         .Input(temp17),
+        .inv(1'b0)
         .Output(temp18)
     );
     shiftRowsE sR5(
@@ -173,8 +178,9 @@ module Encryption(
     );
     assign temp21 = temp20 ^ roundKey5;
     //round 6
-    subBytesE sB6(
+    subBytes sB6(
         .Input(temp21),
+        .inv(1'b0)
         .Output(temp22)
     );
     shiftRowsE sR6(
@@ -187,8 +193,9 @@ module Encryption(
     );
     assign temp25 = temp24 ^ roundKey6;
     //round 7
-    subBytesE sB7(
+    subBytes sB7(
         .Input(temp25),
+        .inv(1'b0)
         .Output(temp26)
     );
     shiftRowsE sR7(
@@ -201,8 +208,9 @@ module Encryption(
     );
     assign temp29 = temp28 ^ roundKey7;
     //round 8
-    subBytesE sB8(
+    subBytes sB8(
         .Input(temp29),
+        .inv(1'b0)
         .Output(temp30)
     );
     shiftRowsE sR8(
@@ -215,8 +223,9 @@ module Encryption(
     );
     assign temp33 = temp32 ^ roundKey8;
     //round 9
-    subBytesE sB9(
+    subBytes sB9(
         .Input(temp33),
+        .inv(1'b0)
         .Output(temp34)
     );
     shiftRowsE sR9(
@@ -229,8 +238,9 @@ module Encryption(
     );
     assign temp37 = temp36 ^ roundKey9;
     //round 10
-    subBytesE sB10(
+    subBytes sB10(
         .Input(temp37),
+        .inv(1'b0)
         .Output(temp38)
     );
     shiftRowsE sR10(

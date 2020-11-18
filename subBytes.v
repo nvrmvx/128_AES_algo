@@ -1,81 +1,105 @@
-module subBytesD(
+module subBytes(
        input [127:0]  Input,
+       input inv, //use the inverse s-box if high
        output [127:0] Output
 );
 
-    //substitute the input bytes with bytes from the inverse s-box
-    subByteD sB1(
+    //substitute the input bytes with bytes from the s-box/inverse s-box
+    subByte sB1(
         .Input(Input[127:120]),
+        .inv(inv),
         .Output(Output[127:120])
     );
-    subByteD sB2(
+    subByte sB2(
         .Input(Input[119:112]),
+        .inv(inv),
         .Output(Output[119:112])
     );
-    subByteD sB3(
+    subByte sB3(
         .Input(Input[111:104]),
+        .inv(inv),
         .Output(Output[111:104])
     );
-    subByteD sB4(
+    subByte sB4(
         .Input(Input[103:96]),
+        .inv(inv),
         .Output(Output[103:96])
     );
-    subByteD sB5(
+    subByte sB5(
         .Input(Input[95:88]),
+        .inv(inv),
         .Output(Output[95:88])
     );
-    subByteD sB6(
+    subByte sB6(
         .Input(Input[87:80]),
+        .inv(inv),
         .Output(Output[87:80])
     );
-    subByteD sB7(
+    subByte sB7(
         .Input(Input[79:72]),
+        .inv(inv),
         .Output(Output[79:72])
     );
-    subByteD sB8(
+    subByte sB8(
         .Input(Input[71:64]),
+        .inv(inv),
         .Output(Output[71:64])
     );
-    subByteD sB9(
+    subByte sB9(
         .Input(Input[63:56]),
+        .inv(inv),
         .Output(Output[63:56])
     );
-    subByteD sB10(
+    subByte sB10(
         .Input(Input[55:48]),
+        .inv(inv),
         .Output(Output[55:48])
     );
-    subByteD sB11(
+    subByte sB11(
         .Input(Input[47:40]),
+        .inv(inv),
         .Output(Output[47:40])
     );
-    subByteD sB12(
+    subByte sB12(
         .Input(Input[39:32]),
+        .inv(inv),
         .Output(Output[39:32])
     );
-    subByteD sB13(
+    subByte sB13(
         .Input(Input[31:24]),
+        .inv(inv),
         .Output(Output[31:24])
     );
-    subByteD sB14(
+    subByte sB14(
         .Input(Input[23:16]),
+        .inv(inv),
         .Output(Output[23:16])
     );
-    subByteD sB15(
+    subByte sB15(
         .Input(Input[15:8]),
+        .inv(inv),
         .Output(Output[15:8])
     );
-    subByteD sB16(
+    subByte sB16(
         .Input(Input[7:0]),
+        .inv(inv),
         .Output(Output[7:0])
     );
 
 endmodule
 
 //to test go to this directory
-//type do testSBD.do in the command line of modelsim
+//type do testSBE.do/testSBD.do in the command line of modelsim
 //change the radix of the waves to hexadecimal (right click -> radix -> hexadecimal)
 //verify the result
 
+//Encryption
+//input
+//193de3bea0f4e22b9ac68d2ae9f84808
+//expected output
+//d42711aee0bf98f1b8b45de51e415230
+
+//Decryption
 //input
 //d42711aee0bf98f1b8b45de51e415230
 //expected output

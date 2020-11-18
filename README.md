@@ -8,15 +8,15 @@ postfix D is for Decryption modules
 ### Encryption
 - [ ] Finish createRoundKey module (AS) 2
 - [x] Finish subBytesE module (NZ) 1
-- [ ] Finish shiftRowsE module (AS) 1
+- [x] Finish shiftRowsE module (AS) 1
 - [ ] Finish mixColumnsE module (AA) 3
 - [x] Finish Encryption module (NZ) 2
 - [x] Set up the run.do test cases to automate testing (NZ)
 ### Decryption
 - [x] Finish subBytesD module (NZ) 1
-- [ ] Finish shiftRowsD module () 1
-- [ ] Finish mixColumnsD module () 3
-- [ ] Finish Decryption module () 2
+- [ ] Finish shiftRowsD module (AS) 1
+- [ ] Finish mixColumnsD module (AA) 3
+- [ ] Finish Decryption module (NZ) 2
 - [ ] Set up the run.do test cases to automate testing (NZ)
 
 ## Test case
