@@ -62,42 +62,52 @@ module Encryption(
 
     createRoundKey rK1(
         .RK(CipherKey),
+        .r_c(4'b0000),
         .NextRK(roundKey1)
     );
     createRoundKey rK2(
         .RK(roundKey1),
+        .r_c(4'b0001),
         .NextRK(roundKey2)
     );
     createRoundKey rK3(
         .RK(roundKey2),
+        .r_c(4'b0010),
         .NextRK(roundKey3)
     );
     createRoundKey rK4(
         .RK(roundKey3),
+        .r_c(4'b0011),
         .NextRK(roundKey4)
     );
     createRoundKey rK5(
         .RK(roundKey4),
+        .r_c(4'b0100),
         .NextRK(roundKey5)
     );
     createRoundKey rK6(
         .RK(roundKey5),
+        .r_c(4'b0101),
         .NextRK(roundKey6)
     );
     createRoundKey rK7(
         .RK(roundKey6),
+        .r_c(4'b0110),
         .NextRK(roundKey7)
     );
     createRoundKey rK8(
         .RK(roundKey7),
+        .r_c(4'b0111),
         .NextRK(roundKey8)
     );
     createRoundKey rK9(
         .RK(roundKey8),
+        .r_c(4'b1000),
         .NextRK(roundKey9)
     );
     createRoundKey rK10(
         .RK(roundKey9),
+        .r_c(4'b1001),
         .NextRK(roundKey10)
     );
 
