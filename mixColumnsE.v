@@ -1,17 +1,12 @@
 module mixColumnsE(
-       input [127:0]  Input,
-       output [127:0] Output
+    input [127:0]  Input,
+    output [127:0] Output
 );
 
-    assign Output = Input;
-    //mix the columns of the input
+//mix the columns of the input
+assign Output = Input;
 
 endmodule
-
-//to test go to this directory
-//type do testMCE.do in the command line of modelsim
-//change the radix of the waves to hexadecimal (right click -> radix -> hexadecimal)
-//verify the result
 
 //input
 //d4bf5d30e0b452aeb84111f11e2798e5
