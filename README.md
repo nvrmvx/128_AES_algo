@@ -9,7 +9,7 @@ postfix D is for Decryption modules
 - [x] Finish createRoundKey module (AS) 2
 - [x] Finish subBytesE module (NZ) 1
 - [x] Finish shiftRowsE module (AS) 1
-- [ ] Finish mixColumnsE module (AA) 3
+- [x] Finish mixColumnsE module (AA) 3
 - [x] Finish Encryption module (NZ) 2
 - [x] Set up the run.do test cases to automate testing (NZ)
 ### Decryption
