@@ -19,8 +19,9 @@ postfix D is for Decryption modules
 - [ ] Finish Decryption module (NZ) 2
 - [ ] Set up the run.do test cases to automate testing (NZ)
 ### Main
-- [ ] Module AES. Reading from/Writing to a *.txt file. Pad input with 0 and split into 128 bit chunks ()
+- [ ] Module AES. Reading from/Writing to a *.txt file. Pad input with 0 and split into 128 bit chunks (AA)
 - [ ] Module AES. ASCII to HEX/HEX to ASCII conversion (AS)
+- [ ] Set up a testbench to run AES (NZ)
 
 ## Test case
 ### Input (Message, Key)
