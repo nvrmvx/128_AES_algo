@@ -10,55 +10,55 @@ module Encryption(
     //last round
     //  subbytes, shiftrows, addroundkey
 
-    wire roundKey1;
-    wire roundKey2;
-    wire roundKey3;
-    wire roundKey4;
-    wire roundKey5;
-    wire roundKey6;
-    wire roundKey7;
-    wire roundKey8;
-    wire roundKey9;
-    wire roundKey10;
-    wire temp1;
-    wire temp2;
-    wire temp3;
-    wire temp4;
-    wire temp5;
-    wire temp6;
-    wire temp7;
-    wire temp8;
-    wire temp9;
-    wire temp10;
-    wire temp11;
-    wire temp12;
-    wire temp13;
-    wire temp14;
-    wire temp15;
-    wire temp16;
-    wire temp17;
-    wire temp18;
-    wire temp19;
-    wire temp20;
-    wire temp21;
-    wire temp22;
-    wire temp23;
-    wire temp24;
-    wire temp25;
-    wire temp26;
-    wire temp27;
-    wire temp28;
-    wire temp29;
-    wire temp30;
-    wire temp31;
-    wire temp32;
-    wire temp33;
-    wire temp34;
-    wire temp35;
-    wire temp36;
-    wire temp37;
-    wire temp38;
-    wire temp39;
+    wire [127:0] roundKey1;
+    wire [127:0] roundKey2;
+    wire [127:0] roundKey3;
+    wire [127:0] roundKey4;
+    wire [127:0] roundKey5;
+    wire [127:0] roundKey6;
+    wire [127:0] roundKey7;
+    wire [127:0] roundKey8;
+    wire [127:0] roundKey9;
+    wire [127:0] roundKey10;
+    wire [127:0] temp1;
+    wire [127:0] temp2;
+    wire [127:0] temp3;
+    wire [127:0] temp4;
+    wire [127:0] temp5;
+    wire [127:0] temp6;
+    wire [127:0] temp7;
+    wire [127:0] temp8;
+    wire [127:0] temp9;
+    wire [127:0] temp10;
+    wire [127:0] temp11;
+    wire [127:0] temp12;
+    wire [127:0] temp13;
+    wire [127:0] temp14;
+    wire [127:0] temp15;
+    wire [127:0] temp16;
+    wire [127:0] temp17;
+    wire [127:0] temp18;
+    wire [127:0] temp19;
+    wire [127:0] temp20;
+    wire [127:0] temp21;
+    wire [127:0] temp22;
+    wire [127:0] temp23;
+    wire [127:0] temp24;
+    wire [127:0] temp25;
+    wire [127:0] temp26;
+    wire [127:0] temp27;
+    wire [127:0] temp28;
+    wire [127:0] temp29;
+    wire [127:0] temp30;
+    wire [127:0] temp31;
+    wire [127:0] temp32;
+    wire [127:0] temp33;
+    wire [127:0] temp34;
+    wire [127:0] temp35;
+    wire [127:0] temp36;
+    wire [127:0] temp37;
+    wire [127:0] temp38;
+    wire [127:0] temp39;
 
     createRoundKey rK1(
         .RK(CipherKey),
@@ -115,7 +115,7 @@ module Encryption(
     //round 1
     subBytes sB1(
         .Input(temp1),
-        .inv(1'b0)
+        .inv(1'b0),
         .Output(temp2)
     );
     shiftRowsE sR1(
@@ -130,7 +130,7 @@ module Encryption(
     //round 2
     subBytes sB2(
         .Input(temp5),
-        .inv(1'b0)
+        .inv(1'b0),
         .Output(temp6)
     );
     shiftRowsE sR2(
@@ -145,7 +145,7 @@ module Encryption(
     //round 3
     subBytes sB3(
         .Input(temp9),
-        .inv(1'b0)
+        .inv(1'b0),
         .Output(temp10)
     );
     shiftRowsE sR3(
@@ -160,7 +160,7 @@ module Encryption(
     //round 4
     subBytes sB4(
         .Input(temp13),
-        .inv(1'b0)
+        .inv(1'b0),
         .Output(temp14)
     );
     shiftRowsE sR4(
@@ -175,7 +175,7 @@ module Encryption(
     //round 5
     subBytes sB5(
         .Input(temp17),
-        .inv(1'b0)
+        .inv(1'b0),
         .Output(temp18)
     );
     shiftRowsE sR5(
@@ -190,7 +190,7 @@ module Encryption(
     //round 6
     subBytes sB6(
         .Input(temp21),
-        .inv(1'b0)
+        .inv(1'b0),
         .Output(temp22)
     );
     shiftRowsE sR6(
@@ -205,7 +205,7 @@ module Encryption(
     //round 7
     subBytes sB7(
         .Input(temp25),
-        .inv(1'b0)
+        .inv(1'b0),
         .Output(temp26)
     );
     shiftRowsE sR7(
@@ -220,7 +220,7 @@ module Encryption(
     //round 8
     subBytes sB8(
         .Input(temp29),
-        .inv(1'b0)
+        .inv(1'b0),
         .Output(temp30)
     );
     shiftRowsE sR8(
@@ -235,7 +235,7 @@ module Encryption(
     //round 9
     subBytes sB9(
         .Input(temp33),
-        .inv(1'b0)
+        .inv(1'b0),
         .Output(temp34)
     );
     shiftRowsE sR9(
@@ -250,7 +250,7 @@ module Encryption(
     //round 10
     subBytes sB10(
         .Input(temp37),
-        .inv(1'b0)
+        .inv(1'b0),
         .Output(temp38)
     );
     shiftRowsE sR10(
