@@ -14,17 +14,10 @@ postfix D is for Decryption modules
 - [x] Set up the run.do test cases to automate testing (NZ)
 ### Decryption
 - [x] Finish subBytesD module (NZ) 1
-- [ ] Finish shiftRowsD module (AS) 1
-- [ ] Finish mixColumnsD module (AA) 3
+- [x] Finish shiftRowsD module (AS) 1
+- [x] Finish mixColumnsD module (AA) 3
 - [x] Finish Decryption module (NZ) 2
 - [x] Set up the run.do test cases to automate testing (NZ)
 ### Main
 - [ ] Module AES (AA)
 - [x] Set up a testbench to run AES (NZ)
-
-## Test case
-### Input (Message, Key)
-3243f6a8885a308d313198a2e0370734\
-2b7e151628aed2a6abf7158809cf4f3c
-### Output
-3925841d02dc09fbdc118597196a0b32
