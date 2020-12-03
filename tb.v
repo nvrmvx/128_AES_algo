@@ -4,6 +4,7 @@ module tb();
 
 //inputData.txt configuration
 //  E or D for encryption or decryption
+//  h or p for hexadecimal or plain text output format
 //  h or p for hexadecimal or plain text input of the cipher key
 //      cipher key (must be exactly 16 characters or 32 hex numbers long)
 //  h or p for hexadecimal or plain text input of the input message
@@ -19,6 +20,7 @@ reg [7:0] mode;
 reg inv;
 reg [7:0] baseC;
 reg [7:0] baseI;
+reg [7:0] baseO;
 reg g;
 reg [127:0] inputData;
 reg [127:0] cipherData;
@@ -51,6 +53,8 @@ begin
         $fclose(fPtrO);
         $finish;
     end
+    $fscanf(fPtrI,"%c",g); //get the \n character
+    $fscanf(fPtrI,"%c",baseO);
     $fscanf(fPtrI,"%c",g); //get the \n character
     $fscanf(fPtrI,"%c",baseC);
     $fscanf(fPtrI,"%c",g); //get the \n character
@@ -127,25 +131,58 @@ always @(posedge clk)
 begin
     if (valid)
     begin
-        if (mode == 8'h45)
-            $fwriteh(fPtrO,outputData,"");
-        else if (mode == 8'h44)
-            $fwrite(fPtrO,outputData);
-        if(inputData[7:0] == 8'h00)
+        if (~|inputData)
         begin
             $fclose(fPtrI);
             $fclose(fPtrO);
             $finish;
         end
+        else if (baseO == 8'h68)
+            $fwriteh(fPtrO,outputData,"");
+        else if (baseO == 8'h70)
+        begin
+            if (|outputData[127:120])
+                $fwrite(fPtrO,"%c",outputData[127:120]);
+            if (|outputData[119:112])
+                $fwrite(fPtrO,"%c",outputData[119:112]);
+            if (|outputData[111:104])
+                $fwrite(fPtrO,"%c",outputData[111:104]);
+            if (|outputData[103:96])
+                $fwrite(fPtrO,"%c",outputData[103:96]);
+            if (|outputData[95:88])
+                $fwrite(fPtrO,"%c",outputData[95:88]);
+            if (|outputData[87:80])
+                $fwrite(fPtrO,"%c",outputData[87:80]);
+            if (|outputData[79:72])
+                $fwrite(fPtrO,"%c",outputData[79:72]);
+            if (|outputData[71:64])
+                $fwrite(fPtrO,"%c",outputData[71:64]);
+            if (|outputData[63:56])
+                $fwrite(fPtrO,"%c",outputData[63:56]);
+            if (|outputData[55:48])
+                $fwrite(fPtrO,"%c",outputData[55:48]);
+            if (|outputData[47:40])
+                $fwrite(fPtrO,"%c",outputData[47:40]);
+            if (|outputData[39:32])
+                $fwrite(fPtrO,"%c",outputData[39:32]);
+            if (|outputData[31:24])
+                $fwrite(fPtrO,"%c",outputData[31:24]);
+            if (|outputData[23:16])
+                $fwrite(fPtrO,"%c",outputData[23:16]);
+            if (|outputData[15:8])
+                $fwrite(fPtrO,"%c",outputData[15:8]);
+            if (|outputData[7:0])
+                $fwrite(fPtrO,"%c",outputData[7:0]);
+        end
     end
 end
 
 //a placeholder for the future AES module
-Encryption e(
-    .InputMessage(inputData),
+Decryption d(
+    .CodedMessage(inputData),
     .CipherKey(cipherData),
     //.inv(inv),
-    .CodedMessage(outputData)
+    .InputMessage(outputData)
 );
 
 endmodule
