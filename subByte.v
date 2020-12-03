@@ -6,7 +6,7 @@ module subByte(
 
 reg [127:0]box[15:0];
 
-initial
+always @(*)
 begin
     if (inv)
         $readmemh("invSBox.mif", box);
