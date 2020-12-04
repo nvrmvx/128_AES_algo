@@ -19,5 +19,5 @@ postfix D is for Decryption modules
 - [x] Finish Decryption module (NZ) 2
 - [x] Set up the run.do test cases to automate testing (NZ)
 ### Main
-- [ ] Module AES (AA)
+- [x] Module AES (AA)
 - [x] Set up a testbench to run AES (NZ)

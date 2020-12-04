@@ -177,12 +177,11 @@ begin
     end
 end
 
-//a placeholder for the future AES module
-Decryption d(
-    .CodedMessage(inputData),
+AES128 aes(
+    .Input(inputData),
     .CipherKey(cipherData),
-    //.inv(inv),
-    .InputMessage(outputData)
+    .inv(inv),
+    .Output(outputData)
 );
 
 endmodule

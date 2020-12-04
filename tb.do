@@ -8,6 +8,7 @@ vlog subByte.v
 vlog subBytes.v
 vlog Encryption.v
 vlog Decryption.v
+vlog AES128.v
 vlog tb.v
 vsim work.tb
 add wave -position insertpoint  \
