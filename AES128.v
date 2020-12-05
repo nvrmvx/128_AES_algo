@@ -9,25 +9,23 @@ wire [127:0] decryptOutput;
 wire [127:0] encryptOutput;
 
 Decryption dA(
-    .CodedMessage(Input[127:0]),
-    .CipherKey(CipherKey[127:0]),
-    .InputMessage(decryptOutput[127:0]) 
+    .CodedMessage(Input),
+    .CipherKey(CipherKey),
+    .InputMessage(decryptOutput)
 );
 
 Encryption eA(
-    .InputMessage(Input[127:0]),
-    .CipherKey(CipherKey[127:0]),
-    .CodedMessage(encryptOutput[127:0])
+    .InputMessage(Input),
+    .CipherKey(CipherKey),
+    .CodedMessage(encryptOutput)
 );
 
 always @(*)
 begin
     if(inv)
-    begin
-        Output [127:0] = decryptOutput[127:0];
-    end
+        assign Output = decryptOutput;
     else
-        Output [127:0] = encryptOutput[127:0];
+        assign Output = encryptOutput;
 end
 
 endmodule
